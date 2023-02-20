@@ -31,9 +31,11 @@ if st.button("Process"):
     st.write("Years of Experience-----",extract_for_YoE['total_exp'])
 
     Skills_extracted=Skills_extraction['skills']
-    for i in Skills_extraction['designation']:
+    designation=Skills_extraction['designation']
+    experience=Skills_extraction['experience']
+    for i in designation:
         Skills_extracted.append(i)
-    for j in Skills_extraction['experience']:
+    for j in experience:
         Skills_extracted.append(j)
 
     skills_reqd_DS=['machine learning','data mining','predictive modeling', 'statistical analysis', 'data visualization', 'natural language processing', 'big data', 'data warehousing', 'sql', 'python/r programming', 'deep learning', 'artificial intelligence', 'data analytics', 'a/b testing', 'feature engineering', 'etl processes', 'time series analysis', 'regression analysis', 'cluster analysis', 'decision trees','power bi']
