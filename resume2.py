@@ -30,7 +30,7 @@ if st.button("Process"):
 
     st.write("Years of Experience-----",extract_for_YoE['total_exp'])
 
-     Skills_extracted=[]
+    Skills_extracted=[]
     for i in Skills_extraction ['skills']:
        Skills_extracted.append(i) 
     for j in Skills_extraction['designation']:
