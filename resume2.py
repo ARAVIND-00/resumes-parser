@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import streamlit as st
 import os
@@ -13,63 +8,29 @@ import nltk
 import spacy
 import en_core_web_sm
 
-
-# In[ ]:
-
-
 def file_selector(folder_path='Resumes'):
     filename=os.listdir(folder_path)
     selected_filename=st.selectbox('select a file',filename)
     return os.path.join(folder_path,selected_filename)
 filename=file_selector()
 if st.button("Process"):
-st.write("You selected `%s` " %filename)
-
-
-# In[ ]:
-
+    st.write("You selected `%s` " %filename)
 
 Skills_extraction=ResumeParser(filename).get_extracted_data()
 extract_for_YoE=resumeparse.read_file(filename)
 
-
-# In[ ]:
-
-
 st.write("Years of Experience-----",extract_for_YoE['total_exp'])
 
-
-# In[ ]:
-
-
 Skills_extracted=Skills_extraction['skills']
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 skills_reqd_DS=['machine learning','data mining','predictive modeling', 'statistical analysis', 'data visualization', 'natural language processing', 'big data', 'data warehousing', 'sql', 'python/r programming', 'deep learning', 'artificial intelligence', 'data analytics', 'a/b testing', 'feature engineering', 'etl processes', 'time series analysis', 'regression analysis', 'cluster analysis', 'decision trees','power bi']
 skills_reqd_HR=['ats','applicant tracking systems','job postings', 'sourcing','source' ,'interviewing skills', 'hiring process', 'job descriptions', 'talent acquisition', 'diversity and inclusion', 'background checks', 'onboarding','hr consulting' ,'recruiting','recruiter','shortlisting','interviewing','end to end recruitment','deadline','reporting','hire','walk-in drives','phone interviewing',' candidate management systems','decisionmaking','management','psychology','monitoring''cms','screening resumes','lateral']
 skills_reqd_sales=['sales', 'account management', 'client relationship management', 'sales forecasting', 'sales strategy', 'sales negotiations', 'pipeline management', 'territory management', 'customer acquisition', 'sales performance', 'sales reporting','website sales','cilents','metrics','inside sales','strategic content development','presales executives','cold calling','executive',' marketing','business development','crm','market research', 'website sales', 'inside sales','negotiations','strategy','customer service']
 
-
-# In[ ]:
-
-
 Skills_extracted=[x.lower() for x in Skills_extracted]
 Skills_extracted=[num.strip(' ') for num in Skills_extracted]
 Skills_extracted=[num.strip(')') for num in Skills_extracted]
 Skills_extracted=[num.strip('(') for num in Skills_extracted]
-
-
-# In[ ]:
-
 
 res={'skills_reqd_DataScientist':[],'skills_reqd_HR':[],'skills_reqd_sales':[]}
 for i in Skills_extracted:
@@ -79,11 +40,6 @@ for i in Skills_extracted:
         res['skills_reqd_HR'].append(str(i))
     if i in skills_reqd_sales:
         res['skills_reqd_sales'].append(str(i))  
-
-
-# In[ ]:
-
-
 
 HR=0
 DS=0
@@ -105,22 +61,10 @@ if (DS>HR and DS>sales):
 if (sales>HR and sales>DS):
     b="Sales"
 
-
-# In[ ]:
-
-
 sal_data=pd.read_csv(r"Salary Dataset - Sheet1.csv")
 sal_data.info()
 
-
-# In[ ]:
-
-
 sal_data=pd.DataFrame(sal_data)
-
-
-# In[14]:
-
 
 def final(a,b):
     
@@ -175,90 +119,7 @@ def final(a,b):
             color_and_shape = sal_data.loc[(sal_data['Job Role'] == "Sales") & (sal_data['YoE'] == "10+")]
             st.write(color_and_shape)
             break
-  
-
-
-# In[15]:
-
 
 #OUTPUT
 final(extract_for_YoE['total_exp'],b)
-
-
-# In[16]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
