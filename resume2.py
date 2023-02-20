@@ -7,7 +7,7 @@ from pyresparser import ResumeParser
 import nltk
 import spacy
 import en_core_web_sm
-nltk.downloader all
+nltk.downloader all()
 # nltk.download('punkt')
 # nltk.download('averaged_perceptron_tagger')
 # nltk.download('universal_tagset')
