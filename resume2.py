@@ -30,9 +30,19 @@ if st.button("Process"):
 
     st.write("Years of Experience-----",extract_for_YoE['total_exp'])
 
-    Skills_extracted=[]
-    for i in Skills_extraction ['skills']:
-       Skills_extracted.append(i)
+    Skills_extracted = []
+
+    if Skills_extraction['skills'] is not None and len(Skills_extraction['skills']) > 0:
+        for i in Skills_extraction['skills']:
+            Skills_extracted.append(i)
+
+    if Skills_extraction['designation'] is not None and len(Skills_extraction['designation']) > 0:
+        for j in Skills_extraction['designation']:
+            Skills_extracted.append(j)
+
+    if Skills_extraction['experience'] is not None and len(Skills_extraction['experience']) > 0:
+        for k in Skills_extraction['experience']:
+            Skills_extracted.append(k)
 
     skills_reqd_DS=['machine learning','data mining','predictive modeling', 'statistical analysis', 'data visualization', 'natural language processing', 'big data', 'data warehousing', 'sql', 'python/r programming', 'deep learning', 'artificial intelligence', 'data analytics', 'a/b testing', 'feature engineering', 'etl processes', 'time series analysis', 'regression analysis', 'cluster analysis', 'decision trees','power bi']
     skills_reqd_HR=['ats','applicant tracking systems','job postings', 'sourcing','source' ,'interviewing skills', 'hiring process', 'job descriptions', 'talent acquisition', 'diversity and inclusion', 'background checks', 'onboarding','hr consulting' ,'recruiting','recruiter','shortlisting','interviewing','end to end recruitment','deadline','reporting','hire','walk-in drives','phone interviewing',' candidate management systems','decisionmaking','management','psychology','monitoring''cms','screening resumes','lateral']
