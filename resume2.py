@@ -5,7 +5,7 @@ import pandas as pd
 from resume_parser import resumeparse
 from pyresparser import ResumeParser
 import nltk
-nltk.download('stopwords')
+
 import spacy
 import en_core_web_sm
 # nltk.download('punkt')
@@ -14,7 +14,7 @@ import en_core_web_sm
 # nltk.download('maxent_ne_chunker')
 # nltk.download('wordnet')
 # nltk.download('brown')
-
+#nltk.download('stopwords')
 def file_selector(folder_path='Resumes'):
     filename=os.listdir(folder_path)
     selected_filename=st.selectbox('select a file',filename)
