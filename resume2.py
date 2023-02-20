@@ -2,19 +2,21 @@
 import streamlit as st
 import os
 import pandas as pd
-from resume_parser import resumeparse
-from pyresparser import ResumeParser
-#import nltk
+
+import nltk
 
 import spacy
 import en_core_web_sm
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('universal_tagset')
-# nltk.download('maxent_ne_chunker')
-# nltk.download('wordnet')
-# nltk.download('brown')
-#nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('universal_tagset')
+nltk.download('maxent_ne_chunker')
+nltk.download('wordnet')
+nltk.download('brown')
+nltk.download('stopwords')
+
+from resume_parser import resumeparse
+from pyresparser import ResumeParser
 def file_selector(folder_path='Resumes'):
     filename=os.listdir(folder_path)
     selected_filename=st.selectbox('select a file',filename)
