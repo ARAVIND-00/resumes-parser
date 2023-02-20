@@ -17,7 +17,7 @@ nltk.download('stopwords')
 
 from resume_parser import resumeparse
 from pyresparser import ResumeParser
-def file_selector(folder_path='Resumes'):
+def file_selector(folder_path='resumes'):
     filename=os.listdir(folder_path)
     selected_filename=st.selectbox('select a file',filename)
     return os.path.join(folder_path,selected_filename)
