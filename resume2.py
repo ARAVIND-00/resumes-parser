@@ -70,7 +70,7 @@ if st.button("Process"):
     if (sales>HR and sales>DS):
         b="Sales"
 
-    sal_data=pd.read_csv(r"Salary Dataset - Sheet1.csv")
+    sal_data=pd.read_csv(r"Salary Dataset.csv")
     sal_data.info()
 
     sal_data=pd.DataFrame(sal_data)
