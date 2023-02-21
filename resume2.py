@@ -13,7 +13,7 @@ import en_core_web_sm
 # nltk.download('maxent_ne_chunker')
 # nltk.download('wordnet')
 # nltk.download('brown')
-# nltk.download('stopwords')
+nltk.download('stopwords')
 
 
 from resume_parser import resumeparse
