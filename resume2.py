@@ -14,7 +14,7 @@ import en_core_web_sm
 # nltk.download('wordnet')
 # nltk.download('brown')
 # nltk.download('stopwords')
-import resume_parser
+
 
 from resume_parser import resumeparse
 from pyresparser import ResumeParser
@@ -28,9 +28,6 @@ if st.button("Process"):
 
     Skills_extraction=ResumeParser(filename).get_extracted_data()
     extract_for_YoE=resumeparse.read_file(filename)
-    experience = resume_parser.get_experience()
-    years_of_experience = experience['years']
-    st.write(years_of_experience)
 
     st.write("Years of Experience-----",extract_for_YoE['total_exp'])
 
